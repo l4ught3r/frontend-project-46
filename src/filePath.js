@@ -1,3 +1,5 @@
 import path from 'path';
 
-export const getPath = (file) => path.resolve(file);
+const getPath = (file) => path.resolve(file);
+
+export default getPath;

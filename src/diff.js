@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { getPath } from './filePath.js';
-import { jsonParse } from './parsing.js';
+import getPath from './filePath.js';
+import jsonParse from './parsing.js';
 
 const diff = (obj1, obj2) => {
   const keyArray = _.union(Object.keys(obj1), Object.keys(obj2)).sort();
@@ -14,7 +14,7 @@ const diff = (obj1, obj2) => {
     if (_.has(obj1, key) && !_.has(obj2, key)) {
       return `  - ${key}: ${obj1[key]}`;
     }
-    return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}}`;
+    return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}`;
   });
   result.unshift('{');
   result.push('}');
