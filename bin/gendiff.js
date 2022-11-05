@@ -1,9 +1,14 @@
 #!/usr/bin/env node
-
-const { program } = require("commander");
+import { program } from "commander";
+import getDiff from "../src/diff.js";
 
 program
-  .option("-V, --version", "output the version number")
-  .description("Compares two configuration files and shows a difference.");
+  .version("0.0.1")
+  .description("Compares two configuration files and shows a difference.")
+  .option("-f --format <type>", "output format")
+  .arguments("<fileName1> <fileName2>")
+  .action((fileName1, fileName2) => {
+    console.log(getDiff(fileName1, fileName2));
+  });
 
 program.parse();
