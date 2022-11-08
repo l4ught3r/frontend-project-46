@@ -4,3 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c13e00e4e2b07aab6d2/maintainability)](https://codeclimate.com/github/l4ught3r/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2c13e00e4e2b07aab6d2/test_coverage)](https://codeclimate.com/github/l4ught3r/frontend-project-46/test_coverage)
 [![Actions Status](https://github.com/l4ught3r/frontend-project-46/actions/workflows/action.yml/badge.svg)](https://github.com/l4ught3r/frontend-project-46/actions)
+# Ascinema getDiff json
+https://asciinema.org/a/xQl34TMFL2L5KfjxfyAk0Kxk1
+# Ascinema getDiff yaml
+https://asciinema.org/a/AkriWgwf0gAClvErrgJ6tZE43
