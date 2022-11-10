@@ -5,6 +5,9 @@ import { jsonParse, yamlParse } from './parsers.js';
 const diff = (obj1, obj2) => {
   const keyArray = _.union(Object.keys(obj1), Object.keys(obj2)).sort();
   const result = keyArray.map((key) => {
+    if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
+      return `${key}: ${diff(obj1[key], obj2[key])}`;
+    }
     if (_.isEqual(obj1[key], obj2[key])) {
       return `    ${key}: ${obj1[key]}`;
     }
