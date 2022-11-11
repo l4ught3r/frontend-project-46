@@ -3,25 +3,25 @@ import { getPath, getExtension } from './filePath.js';
 import { jsonParse, yamlParse } from './parsers.js';
 
 const diff = (obj1, obj2) => {
-  const keyArray = _.union(Object.keys(obj1), Object.keys(obj2)).sort();
-  const result = keyArray.map((key) => {
+  const keys = _.union(Object.keys(obj1), Object.keys(obj2)).sort();
+  const result = keys.map((key) => {
     if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
-      return `${key}: ${diff(obj1[key], obj2[key])}`;
+      return { key, children: diff(obj1[key], obj2[key]), type: 'nested' };
     }
-    if (_.isEqual(obj1[key], obj2[key])) {
-      return `    ${key}: ${obj1[key]}`;
+    if (!Object.hasOwn(obj1, key)) {
+      return { key, value: obj2[key], type: 'added' };
     }
-    if (!_.has(obj1, key) && _.has(obj2, key)) {
-      return `  + ${key}: ${obj2[key]}`;
+    if (!Object.hasOwn(obj2, key)) {
+      return { key, value: obj1[key], type: 'deleted' };
     }
-    if (_.has(obj1, key) && !_.has(obj2, key)) {
-      return `  - ${key}: ${obj1[key]}`;
+    if (obj1[key] !== obj2[key]) {
+      return {
+        key, valueBefore: obj1[key], valueAfter: obj2[key], type: 'changed',
+      };
     }
-    return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}`;
+    return { key, value: obj1[key], type: 'unchanged' };
   });
-  result.unshift('{');
-  result.push('}');
-  return result.join('\n');
+  return result;
 };
 
 const getDiff = (fileName1, fileName2) => {
