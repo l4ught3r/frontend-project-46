@@ -8,3 +8,8 @@
 [![asciicast](https://asciinema.org/a/xQl34TMFL2L5KfjxfyAk0Kxk1.svg)](https://asciinema.org/a/xQl34TMFL2L5KfjxfyAk0Kxk1)
 # Asciinema getDiff yaml
 [![asciicast](https://asciinema.org/a/AkriWgwf0gAClvErrgJ6tZE43.svg)](https://asciinema.org/a/AkriWgwf0gAClvErrgJ6tZE43)
+# Asciinema getDiff nested structures json
+[![asciicast](https://asciinema.org/a/bduR4YTCfeRzRStqnTruytHog.svg)](https://asciinema.org/a/bduR4YTCfeRzRStqnTruytHog)
+# Asciinema getDiff nested structures yaml
+[![asciicast](https://asciinema.org/a/g5ZwZhnuiFxb4Kdvgio0OJTUZ.svg)](https://asciinema.org/a/g5ZwZhnuiFxb4Kdvgio0OJTUZ)
+
