@@ -14,6 +14,10 @@ do4 : # plain json
 	gendiff --format plain __fixtures__/nested-structures1.json __fixtures__/nested-structures2.json 
 do5 : # plain yaml
 	gendiff --format plain __fixtures__/nested-structures1.yaml __fixtures__/nested-structures2.yaml
+do6 : # json json
+	gendiff --format json __fixtures__/nested-structures1.json __fixtures__/nested-structures2.json 
+do7 : # json yaml
+	gendiff --format json __fixtures__/nested-structures1.yaml __fixtures__/nested-structures2.yaml
 test: # npm test
 	npm test
 test-coverage: # test coverage
