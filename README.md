@@ -12,4 +12,6 @@
 [![asciicast](https://asciinema.org/a/bduR4YTCfeRzRStqnTruytHog.svg)](https://asciinema.org/a/bduR4YTCfeRzRStqnTruytHog)
 # Asciinema getDiff nested structures yaml
 [![asciicast](https://asciinema.org/a/g5ZwZhnuiFxb4Kdvgio0OJTUZ.svg)](https://asciinema.org/a/g5ZwZhnuiFxb4Kdvgio0OJTUZ)
+# Asciinema getDiff plain
+[![asciicast](https://asciinema.org/a/5QeH6JZcuS6lnZ7LTm7Ur5mf0.svg)](https://asciinema.org/a/5QeH6JZcuS6lnZ7LTm7Ur5mf0)
 

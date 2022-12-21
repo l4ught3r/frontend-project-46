@@ -19,12 +19,22 @@ test('flat stuctures getDiff yaml', () => {
     .toEqual(readFile('flat-structures.txt'));
 });
 
-test('nested stuctures getDiff json', () => {
+test('nested stuctures stylish getDiff json', () => {
   expect(getDiff('./__fixtures__/nested-structures1.json', './__fixtures__/nested-structures2.json'))
     .toBe(readFile('nested-structures-stylish.txt'));
 });
 
-test('nested stuctures getDiff yaml', () => {
+test('nested stuctures stylish getDiff yaml', () => {
   expect(getDiff('./__fixtures__/nested-structures1.yaml', './__fixtures__/nested-structures2.yaml'))
     .toBe(readFile('nested-structures-stylish.txt'));
+});
+
+test('plain json', () => {
+  expect(getDiff('./__fixtures__/nested-structures1.json', './__fixtures__/nested-structures2.json', 'plain'))
+    .toBe(readFile('plain-result.txt'));
+});
+
+test('plain yaml', () => {
+  expect(getDiff('./__fixtures__/nested-structures1.yaml', './__fixtures__/nested-structures2.yaml', 'plain'))
+    .toBe(readFile('plain-result.txt'));
 });

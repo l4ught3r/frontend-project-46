@@ -1,8 +1,15 @@
-import formattingStylish from './stylish.js';
+import stylish from './stylish.js';
+import plain from './plain.js';
 
-const formatters = {
-  stylish: formattingStylish,
+const format = (diff, formatName) => {
+  switch (formatName) {
+    case 'stylish':
+      return stylish(diff);
+    case 'plain':
+      return plain(diff);
+    default:
+      throw new Error('Unknown format');
+  }
 };
-const format = (diff, formatName) => formatters[formatName](diff);
 
 export default format;
