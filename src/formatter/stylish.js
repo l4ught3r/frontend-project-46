@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
 export const getIndent = (depth, spacesCount = 4) => ' '.repeat((depth * spacesCount) - 2);
-
 export const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth * spacesCount) - spacesCount);
-
 export const stringify = (currentValue, depth = 1) => {
   if (!_.isObject(currentValue)) {
     return `${currentValue}`;
@@ -24,27 +22,21 @@ const formatStylish = (diff) => {
   const iter = (data, depth = 1) => {
     const currentIndent = getIndent(depth);
     const bracketIndent = getBracketIndent(depth);
-
     const lines = data.flatMap((node) => {
       switch (node.type) {
         case 'nested':
           return `${currentIndent}  ${node.key}: ${iter(node.children, depth + 1)}`;
-
         case 'deleted':
           return `${currentIndent}- ${node.key}: ${stringify(node.value, depth + 1)}`;
-
         case 'added':
           return `${currentIndent}+ ${node.key}: ${stringify(node.value, depth + 1)}`;
-
         case 'unchanged':
           return `${currentIndent}  ${node.key}: ${stringify(node.value, depth + 1)}`;
-
         case 'changed':
           return [
             `${currentIndent}- ${node.key}: ${stringify(node.valueBefore, depth + 1)}`,
             `${currentIndent}+ ${node.key}: ${stringify(node.valueAfter, depth + 1)}`,
           ];
-
         default:
           throw new Error(`Unknown type: '${node.type}'!`);
       }
