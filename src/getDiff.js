@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const diff = (obj1, obj2) => {
-  const keys = _.union(Object.keys(obj1), Object.keys(obj2)).sort((a, b) => a - b);
+  const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
   const result = keys.map((key) => {
     if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
       return { key, children: diff(obj1[key], obj2[key]), type: 'nested' };
