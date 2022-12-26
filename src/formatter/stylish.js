@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 export const getIndent = (depth, spacesCount = 4) => ' '.repeat((depth * spacesCount) - 2);
 export const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth * spacesCount) - spacesCount);
+
 export const stringify = (currentValue, depth = 1) => {
   if (!_.isObject(currentValue)) {
     return `${currentValue}`;
