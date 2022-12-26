@@ -6,10 +6,10 @@ const diff = (obj1, obj2) => {
     if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
       return { key, children: diff(obj1[key], obj2[key]), type: 'nested' };
     }
-    if (!Object.hasOwn(obj1, key)) {
+    if (!_.has(obj1, key)) {
       return { key, value: obj2[key], type: 'added' };
     }
-    if (!Object.hasOwn(obj2, key)) {
+    if (!_.has(obj2, key)) {
       return { key, value: obj1[key], type: 'deleted' };
     }
     if (obj1[key] !== obj2[key]) {
