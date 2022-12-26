@@ -7,6 +7,7 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "engines": {    "node": ">=14"  },
   "scripts": {
     "test": "jest"
   },
