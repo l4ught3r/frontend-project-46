@@ -10,3 +10,5 @@ publish: # npm publish
 	npm publish
 install : # npm install
 	npm ci
+do : # do
+	gendiff __fixtures__/file1.json __fixtures__/file2.json
