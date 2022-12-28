@@ -4,5 +4,3 @@ import path from 'path';
 export const getPath = (file) => fs.readFileSync(file);
 
 export const getExtension = (fileName) => path.extname(fileName).slice(1);
-
-console.log(getExtension('file1.json'));
