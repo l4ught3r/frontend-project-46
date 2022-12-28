@@ -1,13 +1,12 @@
-import fs from 'fs';
 import yaml from 'js-yaml';
-import { getExtension } from './filePath.js';
+import { getExtension, getPath } from './filePath.js';
 
 const parseFile = (filePath) => {
   switch (getExtension(filePath)) {
     case 'json':
-      return JSON.parse(fs.readFileSync(filePath));
+      return JSON.parse(getPath(filePath));
     case 'yml':
-      return yaml.load(fs.readFileSync(filePath), 'utf8');
+      return yaml.load(getPath(filePath), 'utf8');
     default:
       throw new Error(`Unknown format: ${getExtension(filePath)}`);
   }

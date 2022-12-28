@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/l4ught3r/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/l4ught3r/frontend-project-46/actions)",
+  "description": "Helps to find the difference between files like json and yaml in three different formats.",
   "main": "index.js",
   "type": "module",
   "bin": {

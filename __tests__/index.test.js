@@ -12,13 +12,15 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 test.each([
+  ['json'],
+  ['yml'],
   ['json', 'stylish'],
   ['json', 'plain'],
   ['json', 'json'],
-  ['yaml', 'stylish'],
-  ['yaml', 'plain'],
-  ['yaml', 'json'],
-])('%s files in %s format', (fileExtension, format) => {
+  ['yml', 'stylish'],
+  ['yml', 'plain'],
+  ['yml', 'json'],
+])('%s files in %s format', (fileExtension, format = 'stylish') => {
   const filePath1 = getFixturePath(`file1.${fileExtension}`);
   const filePath2 = getFixturePath(`file2.${fileExtension}`);
   const expected = readFile(`${format}.txt`);

@@ -1,13 +1,8 @@
+import fs from 'fs';
 import path from 'path';
 
-export const getPath = (file) => path.resolve(file);
+export const getPath = (file) => fs.readFileSync(file);
 
-export const getExtension = (fileName) => {
-  if (fileName.endsWith('.json')) {
-    return 'json';
-  }
-  if (fileName.endsWith('.yaml') || fileName.endsWith('.yml')) {
-    return 'yml';
-  }
-  return '';
-};
+export const getExtension = (fileName) => path.extname(fileName).slice(1);
+
+console.log(getExtension('file1.json'));
