@@ -19,7 +19,7 @@ export const stringify = (currentValue, depth = 1) => {
   ].join('\n');
 };
 
-const formatStylish = (diff) => {
+const stylish = (diff) => {
   const iter = (data, depth = 1) => {
     const currentIndent = getIndent(depth);
     const bracketIndent = getBracketIndent(depth);
@@ -50,4 +50,4 @@ const formatStylish = (diff) => {
   return iter(diff);
 };
 
-export default formatStylish;
+export default stylish;

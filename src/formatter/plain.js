@@ -9,7 +9,7 @@ const getValueType = (value) => {
   return value;
 };
 
-const formatPlain = (diff) => {
+const plain = (diff) => {
   const iter = (data, path) => {
     const result = data
       .filter((node) => node.type !== 'unchanged')
@@ -33,4 +33,4 @@ const formatPlain = (diff) => {
   return iter(diff, '');
 };
 
-export default formatPlain;
+export default plain;
